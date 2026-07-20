@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Class'House by Maguette — Boutique de Parfums de Luxe</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="parfums, luxe, boutique, fragrance, eau de parfum, parfumerie" name="keywords">
+    <meta content="Découvrez notre collection exclusive de parfums de luxe. Des fragrances uniques et envoûtantes pour homme et femme." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="lottie-loader">
+            <div class="perfume-spinner">
+                <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A96E"/>
+                            <stop offset="100%" style="stop-color:#8B2252"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="30" y="5" width="20" height="15" rx="3" fill="#C9A96E" class="spinner-cap"/>
+                    <rect x="35" y="20" width="10" height="10" fill="#C9A96E" opacity="0.8"/>
+                    <rect x="15" y="30" width="50" height="75" rx="10" fill="url(#bottleGrad)" class="spinner-bottle"/>
+                    <rect x="25" y="40" width="30" height="40" rx="5" fill="rgba(255,255,255,0.15)" class="spinner-liquid"/>
+                </svg>
+                <div class="spinner-particles">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top" id="navbar-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0" id="main-nav">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/logo.jpeg" alt="Class'House by Maguette" class="navbar-logo">
+                    <span class="brand-name text-white">Class'House</span>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="#home" class="nav-item nav-link active">Accueil</a>
+                        <a href="#collection" class="nav-item nav-link">Collection</a>
+                        <a href="#about" class="nav-item nav-link">À Propos</a>
+                        <a href="#products" class="nav-item nav-link">Nos Parfums</a>
+                        <a href="galerie.html" class="nav-item nav-link">Galerie</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="https://wa.me/22178771337?text=Bonjour%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20parfums" 
+                       class="btn btn-whatsapp py-2 px-4 d-none d-lg-inline-block" target="_blank" id="nav-whatsapp-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Commander
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid hero-header mb-5" id="home">
+        <!-- Background Video -->
+        <video class="hero-bg-video" autoplay muted loop playsinline poster="img/bg.png" id="hero-video">
+            <source src="https://videos.pexels.com/video-files/6810589/6810589-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <!-- Dark overlay for text readability -->
+        <div class="hero-video-overlay"></div>
+
+        <div class="hero-sparkles-overlay">
+            <span class="sparkle s1">✦</span>
+            <span class="sparkle s2">✦</span>
+            <span class="sparkle s3">✧</span>
+            <span class="sparkle s4">✦</span>
+            <span class="sparkle s5">✧</span>
+            <span class="sparkle s6">✦</span>
+            <span class="sparkle s7">✧</span>
+            <span class="sparkle s8">✦</span>
+            <span class="sparkle s9">✧</span>
+            <span class="sparkle s10">✦</span>
+            <span class="sparkle s11">✧</span>
+            <span class="sparkle s12">✦</span>
+        </div>
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p class="hero-subtitle animated slideInRight">✦ Collection Exclusive ✦</p>
+                    <h1 class="hero-title animated slideInRight">L'Art de la <span class="text-rose-gold">Parfumerie</span></h1>
+                    <p class="hero-text animated slideInRight">Découvrez notre sélection de parfums d'exception, 
+                        des fragrances envoûtantes et raffinées qui révèlent votre personnalité. 
+                        Chaque flacon raconte une histoire unique.</p>
+                    <a href="https://wa.me/22178771337?text=Bonjour%20je%20souhaite%20commander%20un%20parfum" 
+                       class="btn btn-whatsapp-hero py-3 px-5 me-3 animated slideInRight" target="_blank" id="hero-whatsapp-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Commander via WhatsApp
+                    </a>
+                    <a href="#collection" class="btn btn-outline-gold py-3 px-5 animated slideInRight" id="hero-discover-btn">
+                        Découvrir
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid animated pulse infinite hero-img" src="img/perfume-hero.png" alt="Parfum de luxe Hairnic">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5" id="features">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="feature-item position-relative text-center p-3" id="feature-1">
+                        <div class="border py-5 px-3">
+                            <div class="feature-anim-icon">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="icon-gem">
+                                    <polygon points="32,4 58,24 48,58 16,58 6,24" fill="none" stroke="#C9A96E" stroke-width="2" class="gem-outer"/>
+                                    <polygon points="32,12 48,26 42,50 22,50 16,26" fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1" class="gem-inner"/>
+                                    <line x1="32" y1="4" x2="32" y2="12" stroke="#C9A96E" stroke-width="1.5"/>
+                                    <line x1="6" y1="24" x2="16" y2="26" stroke="#C9A96E" stroke-width="1.5"/>
+                                    <line x1="58" y1="24" x2="48" y2="26" stroke="#C9A96E" stroke-width="1.5"/>
+                                    <line x1="16" y1="58" x2="22" y2="50" stroke="#C9A96E" stroke-width="1.5"/>
+                                    <line x1="48" y1="58" x2="42" y2="50" stroke="#C9A96E" stroke-width="1.5"/>
+                                    <circle cx="32" cy="30" r="3" fill="#C9A96E" class="gem-sparkle"/>
+                                </svg>
+                            </div>
+                            <h5 class="mb-2">Qualité Premium</h5>
+                            <p class="mb-0 feature-desc">Des ingrédients nobles et rares sélectionnés avec soin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="feature-item position-relative text-center p-3" id="feature-2">
+                        <div class="border py-5 px-3">
+                            <div class="feature-anim-icon">
+                                <svg viewBox="0 0 64 80" xmlns="http://www.w3.org/2000/svg" class="icon-flask">
+                                    <rect x="24" y="2" width="16" height="10" rx="3" fill="#C9A96E" class="flask-cap"/>
+                                    <rect x="28" y="12" width="8" height="8" fill="#C9A96E" opacity="0.6"/>
+                                    <path d="M20,20 L20,35 L10,60 Q8,66 14,70 L50,70 Q56,66 54,60 L44,35 L44,20" fill="none" stroke="#C9A96E" stroke-width="2" class="flask-body"/>
+                                    <path d="M14,55 Q32,45 50,55 L50,65 Q32,72 14,65 Z" fill="rgba(201,169,110,0.2)" class="flask-liquid"/>
+                                    <circle cx="25" cy="48" r="2" fill="#C9A96E" opacity="0.5" class="flask-bubble b1"/>
+                                    <circle cx="35" cy="52" r="1.5" fill="#C9A96E" opacity="0.4" class="flask-bubble b2"/>
+                                    <circle cx="40" cy="45" r="1" fill="#C9A96E" opacity="0.6" class="flask-bubble b3"/>
+                                </svg>
+                            </div>
+                            <h5 class="mb-2">Fragrances Uniques</h5>
+                            <p class="mb-0 feature-desc">Des compositions originales créées par des maîtres parfumeurs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="feature-item position-relative text-center p-3" id="feature-3">
+                        <div class="border py-5 px-3">
+                            <div class="feature-anim-icon">
+                                <svg viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg" class="icon-delivery">
+                                    <rect x="5" y="20" width="45" height="30" rx="4" fill="none" stroke="#C9A96E" stroke-width="2" class="truck-body"/>
+                                    <path d="M50,28 L65,28 L72,40 L72,50 L50,50 Z" fill="none" stroke="#C9A96E" stroke-width="2" class="truck-cabin"/>
+                                    <circle cx="20" cy="52" r="6" fill="none" stroke="#C9A96E" stroke-width="2" class="truck-wheel w1"/>
+                                    <circle cx="20" cy="52" r="2" fill="#C9A96E"/>
+                                    <circle cx="62" cy="52" r="6" fill="none" stroke="#C9A96E" stroke-width="2" class="truck-wheel w2"/>
+                                    <circle cx="62" cy="52" r="2" fill="#C9A96E"/>
+                                    <line x1="-5" y1="35" x2="5" y2="35" stroke="#C9A96E" stroke-width="2" stroke-dasharray="4 3" class="speed-line sl1"/>
+                                    <line x1="-8" y1="40" x2="3" y2="40" stroke="#C9A96E" stroke-width="1.5" stroke-dasharray="3 4" class="speed-line sl2"/>
+                                    <line x1="-3" y1="30" x2="4" y2="30" stroke="#C9A96E" stroke-width="1.5" stroke-dasharray="5 3" class="speed-line sl3"/>
+                                </svg>
+                            </div>
+                            <h5 class="mb-2">Livraison Rapide</h5>
+                            <p class="mb-0 feature-desc">Livraison à domicile partout au Sénégal sous 48h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Collection / About Start -->
+    <div class="container-fluid py-5" id="collection">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="img-fluid collection-img rounded-3" src="img/2.jpeg" alt="Collection Class'House by Maguette" style="box-shadow: 0 15px 35px rgba(0,0,0,0.3); border: 2px solid var(--rose-gold);">
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="section-subtitle">✦ Notre Collection ✦</p>
+                    <h1 class="section-title">Des Fragrances <span class="text-rose-gold">d'Exception</span></h1>
+                    <p class="section-text">Plongez dans un univers olfactif raffiné. Notre collection est composée de parfums 
+                        soigneusement sélectionnés, alliant tradition et modernité. Chaque fragrance est une invitation 
+                        au voyage sensoriel.</p>
+                    <p class="section-text">Des notes florales aux accords boisés, en passant par les essences orientales, 
+                        trouvez le parfum qui vous correspond.</p>
+                    <a href="https://wa.me/22178771337?text=Bonjour%20je%20souhaite%20en%20savoir%20plus%20sur%20votre%20collection" 
+                       class="btn btn-burgundy py-3 px-5" target="_blank" id="collection-whatsapp-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Nous Contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Collection End -->
+
+
+    <!-- About / Why Us Start -->
+    <div class="container-fluid about-section py-5 my-5" id="about">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="section-subtitle-light">✦ Pourquoi Nous Choisir ✦</p>
+                    <h1 class="section-title-light">L'Élégance <span class="text-rose-gold-light">à Portée de Main</span></h1>
+                    <div class="row g-4 mt-3">
+                        <div class="col-12 d-flex align-items-start">
+                            <div class="about-icon flex-shrink-0">
+                                <i class="fas fa-crown fa-lg"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="text-white">Parfums Authentiques</h5>
+                                <p class="text-white-70">Nous garantissons l'authenticité de chaque parfum. Des marques reconnues et des créations exclusives.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex align-items-start">
+                            <div class="about-icon flex-shrink-0">
+                                <i class="fas fa-hand-holding-heart fa-lg"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="text-white">Conseil Personnalisé</h5>
+                                <p class="text-white-70">Notre équipe vous guide pour trouver la fragrance qui correspond parfaitement à votre personnalité.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex align-items-start">
+                            <div class="about-icon flex-shrink-0">
+                                <i class="fas fa-tags fa-lg"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="text-white">Prix Compétitifs</h5>
+                                <p class="text-white-70">Des parfums de luxe à des prix accessibles. Le meilleur rapport qualité-prix du marché.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="img-fluid about-img" src="img/homme 3.jpeg" alt="Parfum de luxe">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Products Start -->
+    <div class="container-fluid py-5" id="products">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="section-subtitle">✦ Nos Parfums ✦</p>
+                <h1 class="section-title">Notre Sélection <span class="text-rose-gold">Exclusive</span></h1>
+                <p class="section-text mb-4">Explorez notre gamme de parfums soigneusement sélectionnés pour vous offrir des expériences olfactives inoubliables.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.2s">
+                <div class="product-filter-tabs" id="product-filters">
+                    <button class="filter-tab active" data-filter="all" id="filter-all">
+                        <i class="fas fa-th me-2"></i>Tous
+                    </button>
+                    <button class="filter-tab" data-filter="femme" id="filter-femme">
+                        <i class="fas fa-venus me-2"></i>Pour Elle
+                    </button>
+                    <button class="filter-tab" data-filter="homme" id="filter-homme">
+                        <i class="fas fa-mars me-2"></i>Pour Lui
+                    </button>
+                </div>
+            </div>
+
+            <div class="row g-4" id="products-grid">
+                <!-- FEMME — Rose Éternelle -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="femme" data-wow-delay="0.1s">
+                    <div class="product-item text-center h-100 p-4" id="product-1">
+                        <div class="product-gender-badge gender-femme">
+                            <i class="fas fa-venus me-1"></i>Pour Elle
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/femme 1.jpeg" alt="Yves Saint Laurent Black Opium Eau de Parfum">
+                        </div>
+                        <div class="product-badge">Bestseller</div>
+                        <a href="#" class="product-name">YSL Black Opium</a>
+                        <p class="product-notes">Notes : Café Noir, Fleur d'Oranger, Jasmin Sambac, Vanille, Patchouli, Bois de Cèdre</p>
+                        <h5 class="product-price">95.000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*Rose%20%C3%89ternelle*%20(Pour%20Elle).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-2.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-1-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FEMME — Velours de Jasmin -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="femme" data-wow-delay="0.3s">
+                    <div class="product-item text-center h-100 p-4" id="product-2">
+                        <div class="product-gender-badge gender-femme">
+                            <i class="fas fa-venus me-1"></i>Pour Elle
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/femme 2.jpeg" alt="Giorgio Armani My Way Eau de Parfum">
+                        </div>
+                        <div class="product-badge">Nouveau</div>
+                        <a href="#" class="product-name">Giorgio Armani My Way</a>
+                        <p class="product-notes">Notes : Fleur d'Oranger, Bergamote, Tubéreuse, Jasmin d'Inde, Vanille de Madagascar, Cèdre Blanc, Musc Blanc</p>
+                        <h5 class="product-price">70.000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*Velours%20de%20Jasmin*%20(Pour%20Elle).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-1.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-2-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FEMME — Nuit Dorée -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="femme" data-wow-delay="0.5s">
+                    <div class="product-item text-center h-100 p-4" id="product-3">
+                        <div class="product-gender-badge gender-femme">
+                            <i class="fas fa-venus me-1"></i>Pour Elle
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/femme 3.jpeg" alt="Chloé Nomade Eau de Parfum">
+                        </div>
+                        <div class="product-badge">Populaire</div>
+                        <a href="#" class="product-name">Chloé Nomade</a>
+                        <p class="product-notes">Notes : Mirabelle, Bergamote, Freesia, Mousse de Chêne</p>
+                        <h5 class="product-price">85.000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*Nuit%20Dor%C3%A9e*%20(Pour%20Elle).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-2.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-3-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HOMME — Élixir d'Or -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="homme" data-wow-delay="0.1s">
+                    <div class="product-item text-center h-100 p-4" id="product-4">
+                        <div class="product-gender-badge gender-homme">
+                            <i class="fas fa-mars me-1"></i>Pour Lui
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/homme 1.jpeg" alt="Parfum Élixir d'Or">
+                        </div>
+                        <div class="product-badge badge-homme">Bestseller</div>
+                        <a href="#" class="product-name">Versace Eros Parfum</a>
+                        <p class="product-notes">Notes : Menthe, Citron, Fève Tonka, Vanille, Bois de Cèdre</p>
+                        <h5 class="product-price">90.000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*%C3%89lixir%20d'Or*%20(Pour%20Lui).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-3.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-4-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HOMME — Nuit Mystique -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="homme" data-wow-delay="0.3s">
+                    <div class="product-item text-center h-100 p-4" id="product-5">
+                        <div class="product-gender-badge gender-homme">
+                            <i class="fas fa-mars me-1"></i>Pour Lui
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/homme 3.jpeg" alt="Parfum Nuit Mystique">
+                        </div>
+                        <div class="product-badge badge-homme">Populaire</div>
+                        <a href="#" class="product-name">Eternity for Men</a>
+                        <p class="product-notes">Notes : Citron Vert, Basilic, Bergamote, Bois de Santal</p>
+                        <h5 class="product-price">70. 000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*Nuit%20Mystique*%20(Pour%20Lui).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-1.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-5-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HOMME — Bleu Intense -->
+                <div class="col-md-6 col-lg-4 wow fadeIn product-card" data-category="homme" data-wow-delay="0.5s">
+                    <div class="product-item text-center h-100 p-4" id="product-6">
+                        <div class="product-gender-badge gender-homme">
+                            <i class="fas fa-mars me-1"></i>Pour Lui
+                        </div>
+                        <div class="product-img-wrapper">
+                            <img class="img-fluid mb-4" src="img/homme 4.jpeg" alt="Paco Rabanne Phantom">
+                        </div>
+                        <div class="product-badge badge-homme">Nouveau</div>
+                        <a href="#" class="product-name">Phantom</a>
+                        <p class="product-notes">Notes : Lavande, Citron, Ambre Gris, Bois de Cachemire</p>
+                        <h5 class="product-price">85.000 fr cfa</h5>
+                        <a href="https://wa.me/22178771337?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20parfum%20*Bleu%20Intense*%20(Pour%20Lui).%20Photo%20du%20mod%C3%A8le%20%3A%20https%3A%2F%2Fclasshouse.sn%2Fimg%2Fproduct-perfume-3.png" 
+                           class="btn btn-whatsapp-product px-4 py-2" target="_blank" id="product-6-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+    <!-- CTA / WhatsApp Banner Start -->
+    <div class="container-fluid cta-section py-5 my-5" id="cta">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <p class="cta-subtitle">✦ Commandez Facilement ✦</p>
+                    <h1 class="cta-title">Votre Parfum Préféré <br>à un Message de Vous</h1>
+                    <p class="cta-text mb-5">Commandez directement via WhatsApp. Pas d'inscription, pas de formulaire complexe. 
+                        Envoyez-nous un message et recevez votre parfum chez vous !</p>
+                    <a href="https://wa.me/22178771337?text=Bonjour%20je%20souhaite%20passer%20une%20commande" 
+                       class="btn btn-whatsapp-cta py-3 px-5" target="_blank" id="cta-whatsapp-btn">
+                        <i class="fab fa-whatsapp me-2 fa-lg"></i>Envoyer un Message WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA End -->
+
+
+    <!-- Testimonials Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="section-subtitle">✦ Avis Clients ✦</p>
+                <h1 class="section-title">Ce Que Disent <span class="text-rose-gold">Nos Clients</span></h1>
+                <p class="section-text mb-5">La satisfaction de nos clients est notre plus grande fierté.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.1s">
+                        <div class="testimonial-item text-center" data-dot="1">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle fa-4x"></i>
+                            </div>
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Des parfums d'une qualité exceptionnelle ! L'Élixir d'Or est devenu mon parfum signature. 
+                                La livraison était rapide et le service client très professionnel."</p>
+                            <h5 class="testimonial-name">Amina B.</h5>
+                            <p class="testimonial-role">Cliente fidèle</p>
+                        </div>
+                        <div class="testimonial-item text-center" data-dot="2">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle fa-4x"></i>
+                            </div>
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"J'ai commandé Rose Éternelle pour offrir à ma mère. Elle a adoré ! 
+                                La tenue est incroyable et le flacon est magnifique. Je recommande vivement."</p>
+                            <h5 class="testimonial-name">Karim M.</h5>
+                            <p class="testimonial-role">Client satisfait</p>
+                        </div>
+                        <div class="testimonial-item text-center" data-dot="3">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle fa-4x"></i>
+                            </div>
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Nuit Mystique est tout simplement parfait. Un parfum puissant et élégant. 
+                                La commande via WhatsApp est super pratique. Merci Class'House !"</p>
+                            <h5 class="testimonial-name">Yassine D.</h5>
+                            <p class="testimonial-role">Client régulier</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials End -->
+
+
+    <!-- Contact / Footer Start -->
+    <div class="container-fluid footer-section" id="contact">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3 footer-brand-link">
+                        <img src="img/logo.jpeg" alt="Class'House by Maguette" class="footer-logo">
+                        <h1 class="footer-brand">Class'House <span class="footer-brand-sub">by Maguette</span></h1>
+                    </a>
+                    <p class="footer-text">Votre destination pour les parfums de luxe au Sénégal. 
+                        Des fragrances authentiques et exclusives, parfums de niche et huiles de parfum.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square-footer me-2" href="" id="footer-instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square-footer me-2" href="" id="footer-facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square-footer me-2" href="" id="footer-tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a class="btn btn-square-footer me-2" 
+                           href="https://wa.me/22178771337" target="_blank" id="footer-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="footer-heading">Contactez-Nous</h5>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt me-3"></i>Ouakam Cité Avion, Dakar</p>
+                    <p class="footer-contact"><i class="fas fa-phone-alt me-3"></i>(+221) 77 877 13 37</p>
+                    <p class="footer-contact"><i class="fab fa-whatsapp me-3"></i>(+221) 77 877 13 37</p>
+                    <p class="footer-contact"><i class="fas fa-envelope me-3"></i>contact@classhouse.sn</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="footer-heading">Nos Parfums</h5>
+                    <a class="btn btn-link-footer" href="#">Élixir d'Or</a>
+                    <a class="btn btn-link-footer" href="#">Rose Éternelle</a>
+                    <a class="btn btn-link-footer" href="#">Nuit Mystique</a>
+                    <a class="btn btn-link-footer" href="#">Collection Homme</a>
+                    <a class="btn btn-link-footer" href="#">Collection Femme</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="footer-heading">Commander</h5>
+                    <p class="footer-text mb-4">Contactez-nous directement via WhatsApp pour passer votre commande en toute simplicité.</p>
+                    <a href="https://wa.me/22178771337?text=Bonjour%20je%20souhaite%20passer%20une%20commande" 
+                       class="btn btn-whatsapp-footer py-2 px-4" target="_blank" id="footer-order-whatsapp">
+                        <i class="fab fa-whatsapp me-2"></i>Commander Maintenant
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Class'House by Maguette</a>, Tous droits réservés.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#">Accueil</a>
+                            <a href="#">Politique de confidentialité</a>
+                            <a href="#">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/22178771337?text=Bonjour%20!" 
+       class="whatsapp-float" target="_blank" id="whatsapp-float-btn" title="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg back-to-top-btn btn-lg-square" id="back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

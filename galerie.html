@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Galerie — Class'House by Maguette</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="galerie, parfums, Class'House, Maguette, photos" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Simple Gallery Styles -->
+    <style>
+        /* ===== Section ===== */
+        .gallery-section {
+            background-color: var(--cream);
+            padding: 7rem 0 5rem;
+            position: relative;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--rose-gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .gallery-title span {
+            color: var(--rose-gold);
+            font-style: italic;
+        }
+
+        @media (max-width: 767.98px) {
+            .gallery-section {
+                padding: 5.5rem 0 3rem;
+            }
+            .gallery-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== Filters ===== */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .gallery-filter-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dark);
+            background: transparent;
+            border: 1px solid rgba(107, 21, 57, 0.25);
+            border-radius: 30px;
+            padding: 0.55rem 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .gallery-filter-btn:hover {
+            border-color: var(--rose-gold);
+            color: var(--rose-gold-dark);
+        }
+
+        .gallery-filter-btn.active {
+            background: var(--rose-gold);
+            border-color: var(--rose-gold);
+            color: var(--white);
+        }
+
+        .gallery-filters-wrap {
+            position: relative;
+        }
+
+        @media (max-width: 575.98px) {
+            .gallery-filters-wrap {
+                margin: 0 -1rem 1.75rem;
+            }
+
+            .gallery-filters-wrap::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0.5rem;
+                width: 2.5rem;
+                pointer-events: none;
+                background: linear-gradient(to right, rgba(253, 245, 230, 0), var(--cream) 85%);
+            }
+
+            .gallery-filters {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 1rem 0.5rem;
+                margin: 0;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                scroll-snap-type: x proximity;
+            }
+            .gallery-filters::-webkit-scrollbar { display: none; }
+            .gallery-filter-btn {
+                font-size: 0.7rem;
+                padding: 0.5rem 1.05rem;
+                scroll-snap-align: start;
+                flex: 0 0 auto;
+            }
+            .gallery-filter-btn:last-child {
+                margin-right: 1.5rem;
+            }
+        }
+
+        /* ===== Grid ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            background: #eee;
+            box-shadow: 0 6px 20px rgba(74, 14, 40, 0.10);
+        }
+
+        .gallery-card.hidden {
+            display: none;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-card-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.9rem;
+            background: linear-gradient(to top, rgba(26, 10, 16, 0.75) 0%, rgba(26, 10, 16, 0) 55%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-card-overlay {
+            opacity: 1;
+        }
+
+        /* Always show a light overlay on touch devices since hover doesn't apply */
+        @media (hover: none) {
+            .gallery-card-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(26, 10, 16, 0.65) 0%, rgba(26, 10, 16, 0) 60%);
+            }
+        }
+
+        .gallery-card-tag {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .gallery-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 575.98px) {
+            .gallery-card-title {
+                font-size: 0.82rem;
+            }
+            .gallery-card-tag {
+                font-size: 0.62rem;
+            }
+        }
+
+        /* ===== Lightbox ===== */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(20, 8, 13, 0.92);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease;
+            padding: 1.5rem;
+        }
+
+        .lightbox-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 620px;
+            width: 100%;
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lightbox-overlay.open .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .lightbox-caption .lightbox-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+        }
+
+        .lightbox-caption .lightbox-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin: 0.2rem 0 0;
+        }
+
+        .lightbox-close,
+        .lightbox-nav {
+            position: absolute;
+            background: var(--rose-gold);
+            border: none;
+            border-radius: 50%;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close {
+            top: -18px;
+            right: -18px;
+            width: 40px;
+            height: 40px;
+            font-size: 1.05rem;
+            z-index: 2;
+        }
+
+        .lightbox-close:hover {
+            background: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.1rem;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-nav:hover {
+            background: var(--white);
+        }
+
+        .lightbox-prev { left: -22px; }
+        .lightbox-next { right: -22px; }
+
+        @media (max-width: 575.98px) {
+            .lightbox-overlay {
+                padding: 1rem 0.75rem;
+            }
+            .lightbox-close {
+                top: -46px;
+                right: 0;
+            }
+            .lightbox-nav {
+                width: 38px;
+                height: 38px;
+                font-size: 0.95rem;
+            }
+            .lightbox-prev { left: -6px; }
+            .lightbox-next { right: -6px; }
+            .lightbox-caption .lightbox-title {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top" id="navbar-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0" id="main-nav">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/logo.jpeg" alt="Class'House by Maguette" class="navbar-logo">
+                    <span class="brand-name text-white">Class'House</span>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Accueil</a>
+                        <a href="index.html#collection" class="nav-item nav-link">Collection</a>
+                        <a href="index.html#about" class="nav-item nav-link">À Propos</a>
+                        <a href="index.html#products" class="nav-item nav-link">Nos Parfums</a>
+                        <a href="galerie.html" class="nav-item nav-link active">Galerie</a>
+                        <a href="index.html#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="https://wa.me/221778771337?text=Bonjour%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20parfums"
+                       class="btn btn-whatsapp py-2 px-4 d-none d-lg-inline-block" target="_blank" id="nav-whatsapp-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Commander
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Gallery Section Start -->
+    <div class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <p class="gallery-subtitle">✦ Un Voyage Visuel Intime ✦</p>
+                <h3 class="gallery-title">Bienvenue dans nos <span>Histoires</span></h3>
+            </div>
+
+            <div class="gallery-filters-wrap">
+                <div class="gallery-filters" id="galleryFilters">
+                    <button class="gallery-filter-btn active" data-filter="all">Tout</button>
+                    <!-- filled dynamically -->
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- filled dynamically -->
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="index.html#products" class="btn btn-burgundy py-3 px-5">
+                    Découvrir Nos Parfums
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Section End -->
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+                <p class="lightbox-tag" id="lightboxTag"></p>
+                <h4 class="lightbox-title" id="lightboxTitle"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Simple Gallery -->
+    <script>
+    (function () {
+        var IMAGES = [
+            { src: "img/galerie/galerie 555555.jpeg", tag: "Boutique", title: "L'Art du Voyage" },
+            { src: "img/galerie/galerie 6.jpeg", tag: "Savoir-Faire", title: "L'Art de la Parfumerie" },
+            { src: "img/galerie/galerie 4.jpeg", tag: "Boutique", title: "L'Élégance du Détail" },
+            { src: "img/unisex 1.jpeg", tag: "Collection", title: "L'Univers des Fragrances" },
+            { src: "img/galerie/1.jpeg", tag: "Boutique", title: "L'Art du Coffret" },
+            { src: "img/galerie/unesex 3.jpeg", tag: "Fragrance", title: "Oud Klassik" },
+            { src: "img/galerie/unisex 2.jpeg", tag: "Fragrance", title: "Oud en Folie" },
+            { src: "img/galerie/unisex 4.jpeg", tag: "Fragrance", title: "Sultan" },
+            { src: "img/galerie/3.jpeg", tag: "Soin", title: "Les Essentiels" },
+            { src: "img/galerie/unisex 5.jpeg", tag: "Collection", title: "Les Princes du Golfe" }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var grid = document.getElementById('galleryGrid');
+            var filtersWrap = document.getElementById('galleryFilters');
+
+            // Build filter buttons from unique tags
+            var tags = [];
+            IMAGES.forEach(function (it) {
+                if (tags.indexOf(it.tag) === -1) tags.push(it.tag);
+            });
+            tags.forEach(function (tag) {
+                var btn = document.createElement('button');
+                btn.className = 'gallery-filter-btn';
+                btn.setAttribute('data-filter', tag);
+                btn.textContent = tag;
+                filtersWrap.appendChild(btn);
+            });
+
+            // Build grid cards
+            IMAGES.forEach(function (it, idx) {
+                var card = document.createElement('div');
+                card.className = 'gallery-card';
+                card.setAttribute('data-tag', it.tag);
+                card.setAttribute('data-index', idx);
+
+                var img = document.createElement('img');
+                img.src = it.src;
+                img.alt = it.title;
+                img.loading = 'lazy';
+                card.appendChild(img);
+
+                var overlay = document.createElement('div');
+                overlay.className = 'gallery-card-overlay';
+                overlay.innerHTML = '<div><span class="gallery-card-tag">' + it.tag + '</span><p class="gallery-card-title">' + it.title + '</p></div>';
+                card.appendChild(overlay);
+
+                card.addEventListener('click', function () { openLightbox(idx); });
+
+                grid.appendChild(card);
+            });
+
+            // Filtering
+            filtersWrap.addEventListener('click', function (e) {
+                var btn = e.target.closest('.gallery-filter-btn');
+                if (!btn) return;
+                filtersWrap.querySelectorAll('.gallery-filter-btn').forEach(function (b) {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+                var filter = btn.getAttribute('data-filter');
+                grid.querySelectorAll('.gallery-card').forEach(function (card) {
+                    var match = filter === 'all' || card.getAttribute('data-tag') === filter;
+                    card.classList.toggle('hidden', !match);
+                });
+            });
+
+            // ===== Lightbox =====
+            var overlay = document.getElementById('lightboxOverlay');
+            var imgEl = document.getElementById('lightboxImg');
+            var tagEl = document.getElementById('lightboxTag');
+            var titleEl = document.getElementById('lightboxTitle');
+            var closeBtn = document.getElementById('lightboxClose');
+            var prevBtn = document.getElementById('lightboxPrev');
+            var nextBtn = document.getElementById('lightboxNext');
+            var currentIndex = 0;
+
+            function openLightbox(idx) {
+                currentIndex = idx;
+                renderLightbox();
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function renderLightbox() {
+                var it = IMAGES[currentIndex];
+                imgEl.src = it.src;
+                imgEl.alt = it.title;
+                tagEl.textContent = it.tag;
+                titleEl.textContent = it.title;
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + IMAGES.length) % IMAGES.length;
+                renderLightbox();
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % IMAGES.length;
+                renderLightbox();
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeLightbox();
+            });
+
+            window.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
+            });
+
+            // Basic swipe support on mobile
+            var touchStartX = null;
+            overlay.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+            overlay.addEventListener('touchend', function (e) {
+                if (touchStartX === null) return;
+                var dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 40) {
+                    if (dx > 0) showPrev(); else showNext();
+                }
+                touchStartX = null;
+            }, { passive: true });
+        });
+    })();
+    </script>
+</body>
+
+</html>
